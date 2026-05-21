@@ -50,6 +50,16 @@ function applyTranslations() {
         nodes[i].innerHTML = 
         `<h3 class="animated fadeInUp wow">${translations.服务项目[i].名称}</h3><p class="animated fadeInDown wow">${translations.服务项目[i].介绍}</p>`;
     }
+
+    // 联系我们
+    document.querySelector('.contact_section h2').textContent = translations.联系我们;
+    document.querySelector('.contact_section h4').textContent = translations.联系简介;
+        // 服务项目
+    nodes = document.querySelectorAll('.contact_info .detail')
+    nodes[0].innerHTML = `<h4><span><i class="contact_icon fa fa-map-marker"></i></span> ${translations.联系地址}</h4><p>${translations.地址内容}</p>`
+    nodes[1].innerHTML = `<h4><span><i class="contact_icon fa fa-map-marker"></i></span> ${translations.WhatsApp号码}</h4><p>${translations.WhatsApp内容}</p>`
+    nodes[2].innerHTML = `<h4><span><i class="contact_icon fa fa-map-marker"></i></span> ${translations.联系电话}</h4><p>${translations.电话内容}</p>`
+    nodes[3].innerHTML = `<h4><span><i class="contact_icon fa fa-map-marker"></i></span> ${translations.电子邮箱}</h4><p>${translations.邮箱地址}</p>`
 }
 
 // 初始化语言
