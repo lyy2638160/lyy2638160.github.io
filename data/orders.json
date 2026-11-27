@@ -1,23 +1,29 @@
 {
   "zh": {
-    "SF2026112001": {
-      "destination": "新加坡港",
+    "SF260914DC": {
+      "destination": "爱尔兰",
       "statuses": [
-        { "time": "2026-11-20 09:30", "text": "已接收订舱委托，正在向船公司确认舱位" },
-        { "time": "2026-11-21 14:10", "text": "舱位已确认，安排提柜装货" },
-        { "time": "2026-11-23 08:45", "text": "货物已装船，船名航次：EVER GIVEN 1023E" },
-        { "time": "2026-11-24 16:20", "text": "船舶已离港，预计 2026-12-05 抵达新加坡港" }
+        { "time": "2026-11-27 16:06", "text": "更正：因还未卸船，调整至12-2号提柜清关" },
+        { "time": "2026-11-26 09:38", "text": "预计11-26号提柜清关" },
+        { "time": "2026-11-26 09:05", "text": "已到港，待卸船提柜" },
+        { "time": "2026-11-25 18:07", "text": "官网更新预计今晚到港" },
+        { "time": "2026-11-20 09:20", "text": "因目的港堵塞，货物延迟到港，官网更新预计11-24号到港" },
+        { "time": "2026-11-17 10:56", "text": "因目的港堵塞，货物延迟到港，官网更新预计11-21号到港" },
+        { "time": "2026-10-14 11:56", "text": "已开船，预计11-18号到港" }
       ]
     }
   },
   "en": {
-    "SF2026112001": {
-      "destination": "Singapore Port",
+    "SF260914DC": {
+      "destination": "Ireland",
       "statuses": [
-        { "time": "2026-11-20 09:30", "text": "Booking request received, confirming space with carrier" },
-        { "time": "2026-11-21 14:10", "text": "Space confirmed, arranging container pickup and loading" },
-        { "time": "2026-11-23 08:45", "text": "Cargo loaded on board, vessel/voyage: EVER GIVEN 1023E" },
-        { "time": "2026-11-24 16:20", "text": "Vessel departed, ETA Singapore Port 2026-12-05" }
+        { "time": "2026-11-27 16:06", "text": "Update: vessel not yet discharged, container pick-up and customs clearance rescheduled to Dec 2" },
+        { "time": "2026-11-26 09:38", "text": "Expected container pick-up and customs clearance on Nov 26" },
+        { "time": "2026-11-26 09:05", "text": "Arrived at destination port, awaiting discharge and container pick-up" },
+        { "time": "2026-11-25 18:07", "text": "Carrier website updated: expected to arrive tonight" },
+        { "time": "2026-11-20 09:20", "text": "Due to destination port congestion, cargo arrival delayed; carrier website ETA Nov 24" },
+        { "time": "2026-11-17 10:56", "text": "Due to destination port congestion, cargo arrival delayed; carrier website ETA Nov 21" },
+        { "time": "2026-10-14 11:56", "text": "Vessel departed, expected to arrive on Nov 18" }
       ]
     }
   }
