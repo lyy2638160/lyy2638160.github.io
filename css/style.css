@@ -2584,3 +2584,219 @@ div#main-nav {
 .caption strong {
     font-size: clamp(14px, 4vw, 40px);
 }
+
+/* Order Tracking
+---------------------------------*/
+#order {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.order_wrapper {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.order_input_group .form-control {
+    height: 50px;
+    border: 1px solid #e2e2e2;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    color: #333;
+}
+
+.order_input_group .form-control:focus {
+    border-color: #ED5441;
+    box-shadow: none;
+}
+
+.order_btn {
+    background: #ED5441;
+    color: #fff;
+    height: 50px;
+    padding: 0 34px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 0;
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+.order_btn:hover,
+.order_btn:focus {
+    background: #d8432f;
+    color: #fff;
+    outline: none;
+}
+
+.order_modal {
+    border: 0;
+    border-radius: 4px;
+}
+
+.order_modal .modal-header {
+    background: #000;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+}
+
+/* 弹窗整体不超过屏幕高度，状态过多时中间区域滚动 */
+.order_modal {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 60px);
+    max-height: calc(100dvh - 60px);
+}
+
+.order_modal .modal-header,
+.order_modal .modal-footer {
+    flex: 0 0 auto;
+}
+
+.order_modal .modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding-top: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.order_modal .modal-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.order_modal .close {
+    color: #fff;
+    opacity: .7;
+    text-shadow: none;
+}
+
+.order_meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    margin-bottom: 22px;
+    border-bottom: 2px solid #ED5441;
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    /* 滚动状态时保持订单号与目的地可见 */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-top: 15px;
+    background: #fff;
+}
+
+.order_dest {
+    color: #ED5441;
+}
+
+.order_status_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.order_status_list li {
+    position: relative;
+    margin-left: 7px;
+    padding: 0 0 20px 26px;
+    border-left: 2px solid #eee;
+}
+
+.order_status_list li:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+}
+
+.order_status_list li:before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ED5441;
+    box-shadow: 0 0 0 2px #ED5441;
+}
+
+.order_status_text {
+    font-size: 15px;
+    color: #333;
+    margin: 0 0 4px;
+}
+
+.order_status_time {
+    font-size: 13px;
+    color: #999;
+    margin: 0;
+}
+
+.order_message {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.order_modal .modal-footer {
+    border-top: 0;
+    text-align: center;
+    padding: 10px 20px 20px;
+}
+
+/* Order Tracking - Mobile
+---------------------------------*/
+@media (max-width: 480px) {
+    .navStyle ul li a {
+        padding: 10px 4px;
+        font-size: 11px;
+    }
+
+    .order_input_group .form-control {
+        height: 46px;
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .order_btn {
+        height: 46px;
+        padding: 0 18px;
+        font-size: 14px;
+    }
+
+    .order_meta {
+        font-size: 16px;
+    }
+
+    .order_status_list li {
+        padding-left: 20px;
+    }
+
+    .order_modal .modal-body {
+        padding: 0 15px 15px;
+    }
+
+    .order_modal {
+        max-height: calc(100vh - 20px);
+        max-height: calc(100dvh - 20px);
+    }
+}
+
+@media (max-width: 360px) {
+    .navStyle ul li a {
+        padding: 10px 3px;
+        font-size: 10px;
+    }
+}

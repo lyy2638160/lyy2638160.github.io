@@ -173,3 +173,45 @@ const savedLang = localStorage.getItem('selectedLanguage');
 if (savedLang) {
     document.getElementById('langSelect').value = savedLang;
 }
+
+// 导航文字显示不下时自动缩小字号
+function fitNavText() {
+    var navList = document.getElementById('mainNav');
+    if (!navList) {
+        return;
+    }
+    var navBox = navList.parentNode;
+    var navBar = navBox.parentNode;
+    var links = navList.getElementsByTagName('a');
+    if (!links.length) {
+        return;
+    }
+
+    // 先恢复默认字号再测量
+    for (var i = 0; i < links.length; i++) {
+        links[i].style.fontSize = '';
+    }
+
+    // .navStyle 是浮动元素，宽度会被内容撑开，所以以导航栏容器宽度作为可用宽度
+    var available = navBar.clientWidth || navBox.clientWidth;
+    var size = parseFloat(window.getComputedStyle(links[0]).fontSize) || 16;
+    var attempts = 0;
+    while (navList.getBoundingClientRect().width > available && size > 8 && attempts < 40) {
+        size = Math.max(8, size - 0.5);
+        for (var j = 0; j < links.length; j++) {
+            links[j].style.fontSize = size + 'px';
+        }
+        attempts++;
+    }
+}
+
+var navFitTimer = null;
+function scheduleFitNavText() {
+    clearTimeout(navFitTimer);
+    navFitTimer = setTimeout(fitNavText, 100);
+}
+
+// 语言切换和字体加载后文字宽度会变化，需要重新适配
+document.addEventListener('i18n:applied', fitNavText);
+window.addEventListener('load', fitNavText);
+window.addEventListener('resize', scheduleFitNavText);

@@ -1,0 +1,24 @@
+{
+  "zh": {
+    "SF2026112001": {
+      "destination": "新加坡港",
+      "statuses": [
+        { "time": "2026-11-20 09:30", "text": "已接收订舱委托，正在向船公司确认舱位" },
+        { "time": "2026-11-21 14:10", "text": "舱位已确认，安排提柜装货" },
+        { "time": "2026-11-23 08:45", "text": "货物已装船，船名航次：EVER GIVEN 1023E" },
+        { "time": "2026-11-24 16:20", "text": "船舶已离港，预计 2026-12-05 抵达新加坡港" }
+      ]
+    }
+  },
+  "en": {
+    "SF2026112001": {
+      "destination": "Singapore Port",
+      "statuses": [
+        { "time": "2026-11-20 09:30", "text": "Booking request received, confirming space with carrier" },
+        { "time": "2026-11-21 14:10", "text": "Space confirmed, arranging container pickup and loading" },
+        { "time": "2026-11-23 08:45", "text": "Cargo loaded on board, vessel/voyage: EVER GIVEN 1023E" },
+        { "time": "2026-11-24 16:20", "text": "Vessel departed, ETA Singapore Port 2026-12-05" }
+      ]
+    }
+  }
+}

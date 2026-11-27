@@ -3,6 +3,7 @@
     "Home",
     "About Us",
     "Services",
+    "Order Tracking",
     "Contact"
   ],
   "滚屏": [
@@ -42,6 +43,15 @@
   ],
   "联系我们": "Contact Us",
   "联系简介": "GUANGZHOU SHUOFAN INTERNATIONAL FREIGHT FORWARDING CO.LTD",
+  "订单查询": "Order Tracking",
+  "订单查询简介": "Enter your order number to check the shipping status",
+  "订单号占位": "Please enter order number, e.g. SF2026112001",
+  "查询": "Search",
+  "查询结果": "Order Details",
+  "关闭": "Close",
+  "请输入订单号": "Please enter your order number",
+  "未找到订单": "Order not found, please check the order number",
+  "查询失败": "Failed to load order data, please try again later",
   "联系地址": "UNIQUE Infoway",
   "地址内容": "Room 281620.Building 4.No 388,East Hanxi Avenue,Nan Village, Panyu District,guangzhou city",
   "WhatsApp号码": "WhatsApp us",

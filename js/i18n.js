@@ -1,6 +1,14 @@
 let currentLang = localStorage.getItem('selectedLanguage') || (navigator.language == 'zh-CN' ? 'zh' : 'en');
 let translations = {};
 
+// 供其它脚本读取当前语言和翻译文本
+window.getCurrentLang = function () {
+    return currentLang;
+};
+window.getTranslation = function (key) {
+    return translations[key];
+};
+
 async function loadTranslations(lang) {
     try {
         const response = await fetch(`i18n/${lang}.json`);
@@ -60,6 +68,17 @@ function applyTranslations() {
     nodes[1].innerHTML = `<h4><span><i class="contact_icon fa fa-map-marker"></i></span> ${translations.WhatsApp号码}</h4><p>${translations.WhatsApp内容}</p>`
     nodes[2].innerHTML = `<h4><span><i class="contact_icon fa fa-map-marker"></i></span> ${translations.联系电话}</h4><p>${translations.电话内容}</p>`
     nodes[3].innerHTML = `<h4><span><i class="contact_icon fa fa-map-marker"></i></span> ${translations.电子邮箱}</h4><p>${translations.邮箱地址}</p>`
+
+    // 订单查询
+    document.querySelector('#order h2').textContent = translations.订单查询;
+    document.querySelector('#order h6').textContent = translations.订单查询简介;
+    document.getElementById('orderInput').placeholder = translations.订单号占位;
+    document.getElementById('orderSubmit').textContent = translations.查询;
+    document.getElementById('orderModalTitle').textContent = translations.查询结果;
+    document.getElementById('orderClose').textContent = translations.关闭;
+
+    // 通知其它脚本语言已更新
+    document.dispatchEvent(new Event('i18n:applied'));
 }
 
 // 初始化语言

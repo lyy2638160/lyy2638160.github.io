@@ -50,6 +50,7 @@
             <li class="active"><a href="#carousel" class="scroll-link">Home</a></li>
             <li><a href="#aboutUs" class="scroll-link">About Me</a></li>
             <li><a href="#service" class="scroll-link">My Skills</a></li>
+            <li><a href="#order" class="scroll-link">Order Tracking</a></li>
             <li><a href="#contact" class="scroll-link">Contact</a></li>
           </ul>
         </div>
@@ -179,6 +180,42 @@
   </section>
   <!--Service-->
 
+  <!--Order-->
+  <section id="order">
+    <div class="container">
+      <h2>Order Tracking</h2>
+      <h6>Enter your order number to check the shipping status</h6>
+      <div class="order_wrapper">
+        <form id="orderForm" class="order_form" autocomplete="off" novalidate>
+          <div class="input-group order_input_group">
+            <input type="text" id="orderInput" class="form-control" placeholder="Please enter order number, e.g. SF2026112001">
+            <span class="input-group-btn">
+              <button type="submit" id="orderSubmit" class="btn order_btn">Search</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order modal -->
+  <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalTitle">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content order_modal">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="orderModalTitle">Order Details</h4>
+        </div>
+        <div class="modal-body" id="orderModalBody"></div>
+        <div class="modal-footer">
+          <button type="button" id="orderClose" class="btn order_btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Order-->
+
   <!--Footer-->
   <footer class="footer_wrapper" id="contact">
     <div class="container">
@@ -229,6 +266,7 @@
   <script type="text/javascript" src="js/wow.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/order.js"></script>
 
 </body>
 
