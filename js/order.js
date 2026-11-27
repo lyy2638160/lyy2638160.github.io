@@ -5,7 +5,9 @@
  */
 (function () {
     var ORDERS_URL = 'data/orders.json';
+    var CACHE_TTL = 10 * 60 * 1000; // 订单数据缓存 10 分钟，超时后重新拉取
     var ordersData = null;
+    var loadedAt = 0;
     var loading = null;
     var renderCurrent = null;
 
@@ -49,13 +51,15 @@
         if (loading) {
             return loading;
         }
-        loading = fetch(ORDERS_URL).then(function (response) {
+        // 带时间戳参数，避免读取浏览器/网络缓存，保证配置更新后刷新页面即可生效
+        loading = fetch(ORDERS_URL + '?v=' + Date.now()).then(function (response) {
             if (!response.ok) {
                 throw new Error('HTTP ' + response.status);
             }
             return response.json();
         }).then(function (data) {
             ordersData = data;
+            loadedAt = Date.now();
             return data;
         }).catch(function (error) {
             loading = null;
@@ -102,7 +106,8 @@
             showMessage('请输入订单号');
             return;
         }
-        if (!ordersData) {
+        if (!ordersData || Date.now() - loadedAt > CACHE_TTL) {
+            loading = null;
             $('#orderSubmit').prop('disabled', true);
             loadOrders().then(function () {
                 $('#orderSubmit').prop('disabled', false);
